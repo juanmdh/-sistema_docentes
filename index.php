@@ -11,9 +11,9 @@
 </head>
 <body>
 
-    <div class="containter justify-content-center">
+    <div class="container justify-content-center mt-5 col-12">
         <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-6 col-md-6">
                 <div class="card">
                     <div class="card-header text-center">
                         <h1>Inicio Sesión</h1>
