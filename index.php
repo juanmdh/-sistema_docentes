@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="assets/img/icono.png">
     <link rel="stylesheet" href="assets/css/login.css">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
 
     <div class="container justify-content-center mt-5 col-12">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center ">
             <div class="col-lg-6 col-md-6">
                 <div class="card">
                     <div class="card-header text-center">
