@@ -1,22 +1,20 @@
 <?php
-    Class Usuario{
+    Class Docente{
         //ATRIBUTOS
         private String $primerNombre;
         private String $segundoNombre;
         private String $primerApellido;
         private String $segundoApellido;
-        private String $email;
-        private String $contrasena;
+        private String $edad; 
 
         //METODOS
         //CONSTRUCTORES
-        public function __construct($primerNombre, $segundoNombre, $primerApellido, $segundoApellido, $email, $contrasena){
+        public function __construct($primerNombre, $segundoNombre, $primerApellido, $segundoApellido, $edad){
             $this->primerNombre=$primerNombre;
             $this->segundoNombre=$segundoNombre;
             $this->primerApellido=$primerApellido;
             $this->segundoApellido=$segundoApellido;
-            $this->email=$email;
-            $this->contrasena=$contrasena;
+            $this->edad=$edad; 
         }
 
         //GETTER AND SETTER
@@ -32,12 +30,9 @@
         public function getSegundoApellido(){
             return $this->segundoApellido;
         } 
-        public function getEmail(){
-            return $this->email;
-        } 
-        public function getContrasena(){
-            return $this->contrasena;
-        } 
+        public function getEdad(){
+            return $this->edad;
+        }  
 
         public function setPrimerNombre($primerNombre){
             $this->primerNombre=$primerNombre;
@@ -51,11 +46,8 @@
         public function setSegundoApellido($segundoApellido){
             $this->segundoApellido=$segundoApellido;
         }
-        public function setEmail($email){
-            $this->email=$email;
-        }
-        public function setContrasena($contrasena){
-            $this->contrasena=$contrasena;
-        }
+        public function setEdad($edad){
+            $this->edad=$edad;
+        } 
     }
 ?>
