@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <table class="table table-dark table-hover">
+    <table id="tabla__docentes" class="table table-dark table-hover">
         <thead>
             <tr>
                 <th>ID</th>
@@ -34,8 +34,8 @@
                 <td><?php echo $docente->primer_apellido?> <?php echo $docente->segundo_apellido?></td>
                 <td><?php echo $docente->edad?></td>
                 <td>
-                    <a href="" type="button" class="btn btn-primary"><i class="fa-sharp fa-solid fa-pen"></i></a>
-                    <a href="" type="button" class="btn btn-danger"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                    <a href="actualizacion-docente.php?id=<?php echo $docente->id_docente?>" type="button" class="btn btn-primary"><i class="fa-sharp fa-solid fa-pen"></i></a>
+                    <a onclick="eliminarDocente(<?php echo $docente->id_docente ?>)" type="button" class="btn btn-danger"><i class="fa-sharp fa-solid fa-trash"></i></a>
                 </td>
             </tr>
             <?php
@@ -44,6 +44,56 @@
         </tbody>
     </table>
 </div>
+
+<script>
+    jQuery(document).ready(function(){
+        $('#tabla__docentes').DataTable({
+            lengthMenu: [
+                [5, 10, 25, 50, -1],
+                [5, 10, 25, 50, 'All'],
+            ],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+              }
+        });
+    });
+</script>
+
+<script>
+    function eliminarDocente(idDocente){
+        Swal.fire({
+                title: '¿Estás seguro de eliminar al docente?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Aceptar',
+                cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    var url="../../controller/docentes/eliminar-docentes.php?id="+idDocente;
+                    $.ajax({
+                        type:'POST',
+                        url:url,
+                        async:true,
+                        success:function(r){
+
+                        }
+                    })
+                    Swal.fire(
+                    'Docente eliminado!',      
+                    'Rgistre un nuevo docente',
+                    'success'
+                    ).then((result2)=>{
+                        if (result2.isConfirmed){
+                            parent.location.href="docentes.php"
+                        }
+                    })
+                }
+            })        
+    }
+</script>
+
 
 <?php
     include '../layout/footer.php';

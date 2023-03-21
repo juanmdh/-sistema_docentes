@@ -8,7 +8,7 @@
 
         //CONSULTA A BD
         $sentencia = $con -> prepare("INSERT INTO docentes (primer_nombre,segundo_nombre,primer_apellido,segundo_apellido,edad) VALUES(?,?,?,?,?);");
-        $resultado = $sentencia -> execute([$docente->getPrimerNombre(), $docente->getSegundoNombre(), $docente->getPrimerNombre(), $docente->getSegundoApellido(), $docente->getEdad()]);
+        $resultado = $sentencia -> execute([$docente->getPrimerNombre(), $docente->getSegundoNombre(), $docente->getPrimerApellido(), $docente->getSegundoApellido(), $docente->getEdad()]);
         
         if($resultado == true){
             header('Location: ../../view/docentes/docentes.php');
